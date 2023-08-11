@@ -1,0 +1,109 @@
+{%extends "dashboard/layout.html" %}
+{% load static %} 
+
+{% block title %}
+    Daily foods
+{% endblock title %}
+
+{% block css %} 
+    <link rel="stylesheet" href="{% static 'dashboard/foods.css' %}">
+{% endblock css %}
+
+{% block content %}
+<div class="menu-cat">
+    <div class="menu">
+      <h2>Breakfast</h2>
+    </div>
+    <div class="view-all">
+      <!-- <a href="#">View all</a> -->
+    </div>
+  </div>
+  <div class="meals-category">
+    <div class="meals-available">
+      {% for breakfast in breakfasts %} 
+      <div class="meals">
+        <img
+          class="food-icon"
+          src="{{breakfast.food_image.url}}"
+          alt=""
+        />
+        <h4> {{breakfast.name}} </h4>
+        <p class="plantain"> {{breakfast.small_description}} </p>
+        <p class="price">Ghc {{breakfast.Price}} </p>
+        <a class="add-icon-link" href="{% url 'food_details' breakfast.id %}">
+        <img
+          class="add-icon"
+          src="{% static 'images/carbon_add-filled.svg' %}"
+          alt=""
+        />
+        </a>
+      </div>
+      {% endfor %}
+      </div>
+    </div>
+  <div class="menu-cat">
+    <div class="menu">
+      <h2>Lunch</h2>
+    </div>
+    <div class="view-all">
+      <!-- <a href="#">View all</a> -->
+    </div>
+  </div>
+  <div class="meals-category">
+    <div class="meals-available">
+      {% for lunch in lunchs %}
+      <div class="meals">
+        <img
+          class="food-icon"
+          src="{{lunch.food_image.url}}"
+          alt=""
+        />
+        <h4> {{lunch.name}} </h4>
+        <p class="plantain"> {{lunch.small_description}} </p>
+        <p class="price">Ghc {{lunch.Price}} </p>
+        <a class="add-icon-link" href="{% url 'food_details' lunch.id %}">
+        <img
+          class="add-icon"
+          src="{% static 'images/carbon_add-filled.svg' %}"
+          alt=""
+        />
+      </a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  <div class="menu-cat">
+    <div class="menu">
+      <h2>Snacks</h2>
+    </div>
+    <div class="view-all">
+      <!-- <a href="#">View all</a> -->
+    </div>
+  </div>
+  <div class="meals-category">
+    <div class="meals-available">
+      {% for snack in snacks %}
+      <div class="meals">
+        <img
+          class="food-icon"
+          src="{{snack.food_image.url}}"
+          alt=""
+        />
+        <h4> {{snack.name}} </h4>
+        <p class="plantain"> {{snack.small_description}} </p>
+        <p class="price">Ghc {{snack.Price}} </p>
+        <a class="add-icon-link" href="{% url 'food_details' snack.id %}">
+        <img
+          class="add-icon"
+          src="{% static 'images/carbon_add-filled.svg' %}"
+          alt=""
+        />
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+</div>
+<div class="order-right-container"></div>
+{% endblock content %}

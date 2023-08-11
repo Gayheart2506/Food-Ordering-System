@@ -1,0 +1,110 @@
+.selection-container {
+    width: 500px;
+    height: auto;
+    background: #FFFF;
+    position: absolute;
+    top: 0;
+    right: 0;
+    filter: drop-shadow(0px 5px 10px rgba(0, 14, 48, 0.25));
+    display: none;
+    
+
+}
+
+.foodname {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 17px;
+    color: #00302E;
+}
+
+.food-details {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 27px;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.69);
+}
+
+.food-selection {
+    text-align: center;
+    margin-bottom: 20px;
+    
+}
+
+.food-select-img {
+    margin-top: 50px;
+}
+
+.selection-table {
+    text-align: center;
+    margin-left: 50px;
+    margin-bottom: 20px;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    color: #00302E;
+}
+
+td {
+    padding: 20px;
+}
+
+.added-quantity {
+    display: flex;
+    margin-left: 50px;
+    margin-bottom: 30px;
+    gap: 10px;
+    position: relative;
+}
+
+.decrease-sign {
+    width: 40px;
+    height: 50px;
+    background: #F3C294;
+    cursor: pointer;
+}
+
+.increase-sign {
+    width: 40px;
+    height: 50px;
+    background: #F3C294;
+    cursor: pointer;
+}
+
+.signs {
+    text-align: center;
+    position: relative;
+    bottom: 0px;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 31px;
+    text-align: center;
+    color: #00302E;
+}
+
+.add-to-cart {
+    position: relative;
+}
+
+.cart-btn {
+    width: 100px;
+    height: 50px;
+    position: absolute;
+    left: 300px;
+    bottom: 35px;
+    background: #00302E;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 13px;
+    color: #FBFBFB;
+}

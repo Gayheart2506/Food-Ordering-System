@@ -1,0 +1,93 @@
+.main-receipt {
+    /* width: 600px;
+    height: 300px; */
+    max-width: 600px;
+    background-color: #FFFFFF;
+    filter: drop-shadow(0px 5px 10px rgba(0, 14, 48, 0.25));
+    border-radius: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 10px;
+    padding: 20px;
+}
+
+.order-number {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    color: #00302E;
+}
+
+.order-date {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    color: #2D3047;
+}
+
+.receipt-ready {
+    text-align: center;
+    padding-bottom: 50px;
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    color: #00302E;
+}
+
+.receipt-message {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    color: #2D3047;
+}
+
+p {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    color: #2D3047;
+    padding: 10px;
+}
+
+.tag {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    color: #2D3047;
+}
+
+.food-qtyprice {
+    display: flex;
+    /* flex-direction: row; */
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    /* padding: 10px; */
+}
+
+.collection-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.total-amount {
+    display: flex;
+    justify-content: flex-end;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    color: #2D3047;
+}
+
+hr {
+    border: 1px dashed #E5E5E5;
+}

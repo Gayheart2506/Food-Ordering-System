@@ -1,0 +1,48 @@
+{% extends "dashboard/layout.html" %} 
+{% load static %}
+
+{% block title %} 
+    Receipts
+{% endblock title %} 
+
+{% block css %} 
+    <link rel="stylesheet" href="{% static 'dashboard/receipts.css' %}">
+{% endblock css %} 
+
+{% block content %} 
+<div class="receipts-container">
+  
+  <div class="menu-cat"> 
+        <div class="menu">
+          <h2>Receipts</h2>
+        </div>
+  </div>
+  </div>
+  </div>
+  {% for order in order_items %}
+  <div class="receipt-container">
+    
+    <img
+      class="receipt-img"
+      src="{% static 'images/image 4 (1).svg' %}"
+      alt="receipt pic"
+    />
+    
+      <p class="lunch">{{order.food_item.food_category}}</p>
+      <p class="food-name">{{order.food_item.name}}</p>
+      <p class="food-price">Gh. {{order.order.total_price|floatformat:"2"}}</p>
+      <a class="see-details" href="{% url 'receipts_info' order.id %}">See full details</a>
+      
+    
+      
+  </div>
+  {% endfor %}
+</div>
+</div>
+
+</div>
+</div>
+</div>
+<div class="receipts-right-container"></div>
+
+{% endblock content %}

@@ -1,0 +1,98 @@
+.main-container3 {
+    display: grid;
+    grid-template-columns: 315px 700px 300px;
+}
+
+.menu-cat {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.view-all {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 33px;
+    text-decoration-line: underline;
+    color: #00302E;
+}
+
+.receipt-container {
+    width: 640px;
+    height: 116px;
+    background: #FFFFFF;
+    box-shadow: 0px 3px 15px #BCBCBC;
+    border-radius: 5px;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.receipt-img {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}
+
+.lunch {
+    position: absolute;
+    left: 80px;
+    top: 20px;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 33px;
+    color: #00302E;
+}
+
+.food-name {
+    position: absolute;
+    left: 80px;
+    top: 45px;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 33px;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.food-price {
+    position: absolute;
+    left: 530px;
+    top: 20px;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 33px;
+    color: #000000;
+}
+
+.see-details {
+    position: absolute;
+    left: 505px;
+    top: 65px;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 33px;
+    color: #06E775;
+}
+
+
+.receipts-right-container {
+    background: linear-gradient(227.13deg, rgba(0, 48, 46, 0.83) 11.57%, rgba(5, 107, 103, 0.2822) 74.07%);
+    margin-left: 50px;
+    position: relative;
+    left: 25px;
+}

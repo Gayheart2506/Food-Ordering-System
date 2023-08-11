@@ -1,0 +1,135 @@
+{% extends 'home/layout.html' %} 
+{% load static %}
+
+{% block title %} 
+    Home
+{% endblock %} 
+
+{% block css %} 
+    <link rel="stylesheet" href="{% static 'home/home.css' %}">
+{% endblock css %}
+
+{% block content %} 
+<header>
+    <div class="wrapper">
+      <nav>
+        <div class="logo">Cu.Cafeteria</div>
+        <ul>
+          <li>
+            <a href="{% url 'home' %}">Home</a>
+          </li>
+          <li>
+            <a href="{% url 'login' %}">Login</a>
+          </li>
+        </ul>
+      </nav>
+      <!-- End of navigation menu -->
+
+      <div class="content-section">
+        <div class="left">
+          <h1>
+            Order <span class="highlight">food</span> anytime,<br />
+            anywhere
+          </h1>
+          <p>
+            Browse from our list of specials to place your order and have food
+            <br />
+            delivered to you in no time. Affordable, tasty and fast!
+          </p>
+          <a href="{% url 'login' %}" class="btn-white">Get started</a>
+
+          <h3>Get notified when we update!</h3>
+
+          <p class="p2">
+            Get notified when we add new items to our specials menu, <br />
+            update our price list of have promos!
+          </p>
+        </div>
+        <div class="right">
+          <img src="{% static 'images/landing-page food.png' %}" alt="" />
+          <div class="get-notified">
+          <div class="input-position">
+              <input type="text" placeholder="" />
+              <button class="btn">Get notified</button>
+          </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- End of header section -->
+
+  <footer>
+    <div class="wrapper">
+      <div class="links-container">
+        <div class="links">
+          <h3>Company</h3>
+          <ul>
+            <li>
+              <a href="#">About us</a>
+            </li>
+            <li>
+              <a href="#">Careers</a>
+            </li>
+            <li>
+              <a href="#">Contact us</a>
+            </li>
+          </ul>
+        </div>
+        <div class="links">
+          <h3>Support</h3>
+          <ul>
+            <li>
+              <a href="#">Help Center</a>
+            </li>
+            <li>
+              <a href="#">Safety center</a>
+            </li>
+          </ul>
+        </div>
+        <div class="links">
+          <h3>Legal</h3>
+          <ul>
+            <li>
+              <a href="#">Cookies Policy</a>
+            </li>
+            <li>
+              <a href="#">Privacy Policy</a>
+            </li>
+            <li>
+              <a href="#">Terms of Services</a>
+            </li>
+            <li>
+              <a href="#">Dispute Resolution</a>
+            </li>
+          </ul>
+          </div>
+      </div>
+      <div class="divider">
+          <hr/>
+      </div>
+      <div class="container-features">
+          <div class="copyright">
+              <p>
+                  © 2023 Central University , All rights reserved
+              </p>
+          </div>
+          <div class="social-icons">
+              <a href="#">
+                  <img src="{% static 'images/instagram icon.svg' %}" alt="">
+              </a>
+              <a href="#">
+                  <img src="{% static 'images/twitter icon.svg' %}" alt="">
+              </a>
+              <a href="#">
+                  <img src="{% static 'images/youtube icon.svg' %}" alt="">
+              </a>
+          </div>
+      </div>
+      </div>
+      </div>
+    </div>
+  </footer>
+{% endblock content %} 

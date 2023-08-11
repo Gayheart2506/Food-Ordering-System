@@ -1,0 +1,108 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %} {% endblock title %}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Rubik:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{% static 'dashboard/dashboard.css' %}" />
+
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
+    <!-- Default theme -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css"/>
+
+    
+    {% block css %} 
+    
+    {% endblock css %} 
+  </head>
+  <body>
+    <main>
+      <div class="main-container main-container2 main-container3">
+        <div class="container-sidebar">
+          <div class="sidebar">
+            <h2>Cu.Cafeteria</h2>
+            <ul>
+              <li>
+                <a href="{% url 'dashboard' %}"
+                  ><img
+                    class="icon"
+                    src="{% static 'images/majesticons_home (1).svg' %}"
+                    alt=""
+                  />Dashboard</a
+                >
+              </li>
+              <li>
+                <a href="{% url 'orders' %}"
+                  ><img
+                    class="icon"
+                    src="{% static 'images/majesticons_calendar.svg' %}"
+                    alt=""
+                  />Orders</a
+                >
+              </li>
+              <li>
+                <a href="{% url 'dailyfoods' %}"
+                  ><img class="icon" src="{% static 'images/Vector (2).svg' %}" alt="" />Daily
+                  Food Menu</a
+                >
+              </li>
+              <!-- <li>
+                <a href="#"
+                  ><img class="icon" src="/images/Vector (3).svg" alt="" />Food
+                  Reviews</a
+                >
+              </li> -->
+              <li>
+                <a href="{% url 'receipts' %}"
+                  ><img
+                    class="icon"
+                    src="{% static 'images/Group (1).svg' %}"
+                    alt=""
+                  />Receipts</a
+                >
+              </li>
+              <li>
+                <a href="{% url 'logout' %}"
+                  ><img
+                    class="icon"
+                    src="{% static 'images/carbon_logout.svg' %}"
+                    alt=""
+                  />Logout</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="middle-container">
+          <div class="middle-content">
+            <div class="welcome-profile">
+              <h2>Welcome, {{request.user.first_name}} !</h2>
+              <p class="p-sentence">
+                what delicious meal are you craving today?
+              </p>
+              <input type="text" placeholder="Search" />
+            </div>
+            {% block content %}
+            {% endblock content %}
+      </div>
+    </main>
+
+      <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+      <script>
+        alertify.set('notifier','position', 'top-right');
+        {% for msg in messages %}
+          alertify.success('{{msg|escapejs}}')
+        {% endfor %}
+      </script>
+        {% block script %} 
+        {% endblock script %} 
+  </body>
+</html>

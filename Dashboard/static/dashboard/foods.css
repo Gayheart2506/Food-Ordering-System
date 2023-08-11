@@ -1,0 +1,104 @@
+.main-container2 {
+    display: grid;
+    grid-template-columns: 315px 930px 120px;
+    
+}
+ 
+
+/* Middle content  */
+.menu-cat {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.view-all {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 33px;
+    text-decoration-line: underline;
+    color: #00302E;
+}
+
+
+.fire-icon {
+    position: absolute;
+    left: 130px;
+}
+
+.food-icon {
+    position: absolute;
+    left: 50px;
+    top: 10px;
+}
+
+.meals-available {
+    display: flex;
+    flex-direction: row;
+    /* flex-wrap: wrap; */
+    gap: 60px;
+}
+
+.meals{
+    text-align: center;
+    width: 178.24px;
+    height: 228px;
+    filter: drop-shadow(0px 4px 10px #BCBCBC);
+    background: rgba(255, 255, 255, 0.83);
+    border: 0.3px solid rgba(0, 48, 46, 0.3);
+    border-radius: 20px;
+    position: relative;
+}
+
+.meals h4 {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    text-align: center;
+    color: #00302E;
+    position: relative;
+    left: 5px;
+    top: 80px;
+}
+
+.plantain {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.69);
+    
+}
+
+.price {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 11px;
+    line-height: 33px;
+    color: #00302E;
+    position: absolute;
+    top: 190px;
+    left: 15px;
+}
+
+.add-icon {
+    position: absolute;
+    left: 120px;
+    top: 195px;
+    cursor: pointer;
+}
+
+/* The right sidebar */
+
+.order-right-container {
+    background: linear-gradient(227.13deg, rgba(0, 48, 46, 0.83) 11.57%, rgba(5, 107, 103, 0.2822) 74.07%);
+    position: relative;
+    right: 20px; 
+}

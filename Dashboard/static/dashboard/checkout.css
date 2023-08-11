@@ -1,0 +1,73 @@
+h3 {
+    padding-top: 20px;
+    margin-left: 45px;
+    color: #00302E;
+    font-family: Poppins;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 600;
+}
+
+.checkout-container {
+    max-width: 600px;
+    background: #FFFF;
+    filter: drop-shadow(0px 5px 10px rgba(0, 14, 48, 0.25));
+}
+
+.checkout-container .checkout-details form {
+    display: grid;
+    gap: 20px;
+    max-width: 488px; /* Use max-width instead of fixed width */
+    padding: 60px;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.checkout-container .checkout-details form input,
+.checkout-container .checkout-details form select {
+    border-radius: 5px;
+    border: 1px solid rgba(251, 221, 187, 0.51);
+    background: rgba(255, 255, 255, 0.83);
+    width: 100%; /* Let the width be determined by the parent container */
+    height: 71px;
+    margin: 0px;
+
+    color: rgba(0, 48, 46, 0.53);
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 33px;
+    padding-left: 20px;
+}
+
+.checkout-container .checkout-details form select option {
+    border-radius: 5px;
+    border: 1px solid rgba(251, 221, 187, 0.30);
+    background: rgba(255, 255, 255, 0.70);
+    
+    color: rgba(0, 48, 46, 0.80);
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.checkout-container .checkout-details form button {
+    background: #00302E;
+    color: #F3C294;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 27px;
+    width: 100%; /* Let the width be determined by the parent container */
+    height: 60px;
+}
+
+.btn-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}

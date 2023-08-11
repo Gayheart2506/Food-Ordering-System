@@ -1,0 +1,123 @@
+.main-container3 {
+    display: grid;
+    grid-template-columns: 315px 700px 300px;
+}
+
+.food-right-container {
+    background: linear-gradient(227.13deg, rgba(0, 48, 46, 0.83) 11.57%, rgba(5, 107, 103, 0.2822) 74.07%);
+    margin-left: 50px;
+    position: relative;
+    left: 25px; 
+}
+
+.selection-container {
+    margin-left: 20px;
+    text-align: center;
+    width: 500px;
+    height: auto;
+    background: #FFFF;
+    filter: drop-shadow(0px 5px 10px rgba(0, 14, 48, 0.25));
+
+    
+
+}
+
+.foodname {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 17px;
+    color: #00302E;
+}
+
+.food-details {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 27px;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.69);
+}
+
+.food-selection {
+    text-align: center;
+    margin-bottom: 20px;
+    
+}
+
+.food-select-img {
+    margin-top: 50px;
+}
+
+.selection-table {
+    text-align: center;
+    margin-left: 50px;
+    margin-bottom: 20px;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    color: #00302E;
+}
+
+td {
+    padding: 20px;
+}
+
+.added-quantity {
+    display: flex;
+    margin-left: 50px;
+    margin-bottom: 25px;
+    gap: 10px;
+    position: relative;
+}
+
+.decrease-sign {
+    margin-bottom: 10px;
+    width: 40px;
+    height: 50px;
+    background: #F3C294;
+    cursor: pointer;
+}
+
+.increase-sign {
+    margin-bottom: 10px;
+    width: 40px;
+    height: 50px;
+    background: #F3C294;
+    cursor: pointer;
+}
+
+.signs {
+    text-align: center;
+    position: relative;
+    bottom: 0px;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 31px;
+    text-align: center;
+    color: #00302E;
+}
+
+.add-to-cart {
+    position: relative;
+}
+
+.cart-btn {
+    width: 100px;
+    height: 50px;
+    position: absolute;
+    left: 300px;
+    bottom: 35px;
+    background: #00302E;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 13px;
+    color: #FBFBFB;
+}

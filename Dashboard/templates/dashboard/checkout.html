@@ -1,0 +1,97 @@
+{% extends 'dashboard/layout.html' %} 
+{% load static %}
+
+{% block title %} 
+    Checkout
+{% endblock title %} 
+
+{% block css %} 
+    <link rel="stylesheet" href="{% static 'dashboard/checkout.css' %}">
+    <link rel="stylesheet" type="text/css" href="https://common.olemiss.edu/_js/sweet-alert/sweet-alert.css">
+{% endblock css %} 
+
+{% block content %} 
+<div class="checkout-container">
+    <h3>Checkout Page</h3>
+    <div class="checkout-details">
+        {% if cart %} 
+        <form id="paymentForm" action="{% url 'placeorder' %}" method="POST">
+            {% csrf_token %} 
+            <input type="text" id="fname" name="fname" placeholder="First Name" required>
+            <input type="text" id="lname" name="lname" placeholder="Last Name" required>
+            <input type="email" id="email-address" name="email" placeholder="E-mail" required>
+            <input type="number" id="phone" name="phone" placeholder="Phone Number" required>
+            <input type="text" id='food' name="food_cat" placeholder="Food Category" required>
+            <input type="text" id="more_info" name="more_info" placeholder="Additional Information">
+            <div class="btn-container">
+                <input type="hidden" value="COD" name="payment_mode">
+                <div>
+                    <button type="submit">Pay with COD</button>
+                </div>
+                <div>
+                    <button type="submit" onclick="payWithPaystack()">other Payment methods</button>
+                </div>
+                    
+            </div>
+        </form>
+        {% else %} 
+            <h1 style="text-align: center;">No items in the Cart !!</h1>
+        {% endif %}
+        
+    </div>
+</div>
+<script src="https://js.paystack.co/v1/inline.js"></script> 
+<script src="https://common.olemiss.edu/_js/sweet-alert/sweet-alert.min.js"></script>
+
+<script>
+    function payWithPaystack() {
+        // Retrieve the total order amount in kobo from the cart_total_price_in_kobo
+        const cartTotalPriceInKobo = {{ total_price }}; // Replace this with the actual value
+
+        // Other form field values (if needed)
+        const email = document.getElementById('email-address').value;
+        const fname = document.getElementById('fname').value;
+        const lname = document.getElementById('lname').value;
+        const phone = document.getElementById('phone').value;
+        const more_info = document.getElementById('more_info').value;
+        const foodCategory = document.getElementsByName('food_cat')[0].value;
+
+        if(!email || !foodCategory || !fname || !lname || !phone || !more_info  /* Add other required fields here */){
+            swal("Alert!", "Please fill in all fields!", "error")
+            return;
+        }
+
+        // Initialize Paystack payment
+        PaystackPop.setup({
+            key: 'pk_test_5a4c353c09dfa57f145d3f039ea1153dd9e5086f', // Replace this with your Paystack public key
+            email: email,
+            fname: fname,
+            lname: lname,
+            phone: phone,
+            more_info: more_info,
+            amount: cartTotalPriceInKobo * 100,
+            currency: 'GHS',
+            // metadata: {
+            //     custom_fields: [
+            //         {
+            //             display_name: "Food Category",
+            //             variable_name: "food_cat",
+            //             value: foodCategory,
+            //         },
+            //     ],
+            // },
+
+            callback: function (response) {
+                // Handle the response from Paystack (e.g., process the order)
+                console.log(response);
+                // You can submit the form programmatically here if needed
+                document.getElementById('paymentForm').submit();
+            },
+            onClose: function () {
+                // Handle when the Paystack modal is closed (e.g., if the user cancels the payment)
+                console.log('Payment closed');
+            }
+        }).openIframe();
+    }
+</script>
+{% endblock content %}

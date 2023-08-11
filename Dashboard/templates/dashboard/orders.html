@@ -1,0 +1,57 @@
+{% extends 'dashboard/layout.html' %} 
+{% load static %}
+
+{% block title %} 
+    Order-List
+{% endblock title %} 
+
+{% block css %} 
+    
+    <link rel="stylesheet" href="{% static 'dashboard/order-list.css' %}">
+{% endblock css %}
+
+{% block content %} 
+<div class="orderlist-popup">
+  <div class="">
+    <h1 class="order-heading">Your Orders</h1>
+    <p class="date">{{today_date}}</p>
+  </div>
+  <div class="table-orders">
+    <table>
+      <thead cellspacing="100px">
+        <tr>
+          <th class="move-item">Item</th>
+          <th>Qty</th>
+          <th>Price</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        {% for item in orders %}
+        <tr>
+          <td class="column-space">
+            <div class="food-arrange">
+              <img
+                class="food-img"
+                src="{{item.food_item.food_image.url}}"
+                alt=""
+              />
+              <span class="foodname">{{item.food_item.name}}</span>
+              <p class="remove">Remove</p>
+            </div>
+          </td>
+          <td class="td-quantity">{{item.quantity}}</td>
+          <td class="td-quantity">Gh{{item.order.total_price|floatformat:"2"}}</td>
+          {% if item.order.status == "cooking" %}
+          <td style="color: red;" class="status">{{item.order.status}}</td>
+          {% else %} 
+          <td style="color: green;" class="status">{{item.order.status}}</td>
+          {% endif %}
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock content %}

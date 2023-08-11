@@ -1,0 +1,162 @@
+.main-container2 {
+    display: grid;
+    grid-template-columns: 315px 920px 114px;
+    
+}
+
+.cart-right-container {
+    background: linear-gradient(227.13deg, rgba(0, 48, 46, 0.83) 11.57%, rgba(5, 107, 103, 0.2822) 74.07%);
+    
+}
+
+.cart-container {
+    width: 650px;
+    height: auto;
+    background: #FFFFFF;
+    filter: drop-shadow(0px 5px 10px rgba(0, 14, 48, 0.25));  
+    padding-top: 30px;
+    padding-left: 30px;
+    margin-left: 0px;
+    
+
+}
+
+
+.order-heading {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 32px;
+    color: #00302E;
+}
+
+.date {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    color: #00302E;
+    margin-bottom: 10px;
+}
+
+.food-arrange {
+    position: relative;
+}
+
+.food-img {
+    position: relative;
+    top: 30px;
+    right: 25px;
+}
+
+.foodname {
+    position: relative;
+    bottom: 15px;
+    right: 15px;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 17px;
+    color: #00302E;
+}
+
+.remove {
+    position: relative;
+    left: 65px;
+    bottom: 10px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    color: #C92C33;
+    cursor: pointer;
+}
+
+.move-item {
+    text-align: left;
+}
+
+.column-space {
+    padding-right: 50px;
+}
+
+th {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    color: rgba(0, 0, 0, 0.69);
+}
+
+td {
+    flex-wrap: wrap;
+    padding: 20px;
+    gap: 20px;
+}
+
+.td-quantity {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 17px;
+    color: #00302E;
+}
+
+tr{
+    flex-wrap: wrap;
+}
+
+.status {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    color: #3A8F4D;
+}
+
+.total-container{
+    display: flex;
+    gap: 5px;
+    margin-left: 440px;
+}
+
+.total-label{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 17px;
+    line-height: 33px;
+    color: rgba(0, 0, 0, 0.69);
+
+}
+
+.total-amount{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 21px;
+    line-height: 33px;
+    color: #00302E;
+}
+
+.btn-link {
+    padding: 15px 50px;
+    margin-left: 185px;
+    /* margin-top: 10px;
+    margin-bottom: 0px; */
+    background: #00302E;
+    text-align: center;
+    text-decoration: none;
+    position: relative;
+    bottom: 20px;
+}
+
+#checkout-btn{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 13px;
+    text-align: center;
+    color: #F3C294;
+}

@@ -1,0 +1,95 @@
+{% extends 'dashboard/layout.html' %} 
+{% load static %} 
+
+{% block title %} 
+    Cart
+{% endblock title %} 
+
+{% block css %} 
+<link rel="stylesheet" href="{% static 'dashboard/cart.css' %}">
+{% endblock css %} 
+
+{% block content %} 
+    <div class="cart-container">
+        <div class="table-orders">
+            <table class="cart-info">
+              <thead cellspacing="100px">
+                <tr>
+                  <th class="move-item">Item</th>
+                  <th>Qty</th>
+                  <th>Unit Price</th>
+                  <th>Sub-Total</th>
+                </tr>
+              </thead>
+    
+              <tbody class="cart-data">
+                {% if cart %} 
+                    {% for item in cart %}
+                <tr class="food-case">
+                  <td class="column-space">
+                    <input type="hidden" value="{{item.food_item_id}}" class="food_id">
+                    <div class="food-arrange">
+                      <img
+                        class="food-img"
+                        src="{{item.food_item.food_image.url}}"
+                        alt=""
+                      />
+                      <span class="foodname">{{item.food_item.name}}</span>
+                      <p class="remove">Remove</p>
+                    </div>
+                  </td>
+                  <td class="td-quantity">{{item.food_qty}}</td>
+                  <td class="td-quantity">Ghc {{item.food_item.Price}}</td>
+                  <td class="status"></td>
+                  {% endfor %}
+                  
+                </tr>
+                
+              </tbody>
+            </table>
+        </div>
+        <div class="total-container">
+            <div class="total-label">Total :</div>
+            <div class="total-amount">Ghc {{total}}</div>
+        </div>
+         <a class="btn-link" id="checkout-btn" href="{% url 'checkout' %}">Checkout</a>
+    </div>
+    {% else %} 
+        <h3>No Items in Cart !</h3>
+    {% endif %}
+    <script src="{% static 'js/jquery-3.7.0.min.js' %}"></script>
+
+    </div>
+    </div>
+    <div class="cart-right-container"></div>
+{% endblock content %}
+
+{% block script %} 
+    <script>
+      $(document).ready(function () {
+        $(".remove").click(function (e) { 
+          e.preventDefault();
+          
+          var food_id = $(".food_id").val();
+
+          $.ajax({
+            type: "POST",
+            url: "{% url 'removeitem' %}",
+            data: {
+              'food_id': food_id,
+              'csrfmiddlewaretoken': '{{csrf_token}}',
+            },
+            dataType: "json",
+            success: function (response) {
+              $('.table-orders').load(location.href + " .table-orders");
+              $('.total-amount').load(location.href + " .total-amount");
+              alertify.success('Removed food from cart !')
+              
+            }
+          });
+
+
+        });
+      });
+    </script>
+{% endblock script %} 

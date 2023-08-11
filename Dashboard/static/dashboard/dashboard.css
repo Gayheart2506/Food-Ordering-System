@@ -1,0 +1,482 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+body{
+
+    width: 100%;
+    min-height: 100vh;
+    font-family: "poppins", sans-serif;
+}
+
+.main-container{
+    display: grid;
+    grid-template-columns: 315px 730px 300px;
+}
+
+            /* side bar section  */
+
+.container-sidebar{
+    /* width: 320px;
+    height: 900px; */
+    background: #FBFBFB;
+    border-radius: 20px;
+    margin-top: 10px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.side-bar h2{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    letter-spacing: 0.05em;
+    color: #00302E;
+    text-align: center;
+    position: absolute;
+
+}
+
+li{
+    list-style: none;
+    margin: 60px auto;
+
+
+
+}
+
+li:hover{
+    background: rgba(0, 48, 46, 0.7);
+    border-radius: 12px;
+    padding: 8px;
+}
+
+a {
+    text-decoration: none;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #707070;
+}
+
+.icon {
+    margin-right:10px;
+}
+
+
+/* The middle section  */
+
+.middle-container {
+    margin: 65px;
+}
+
+.middle-content h2 {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 33px;
+    color: #00302E;
+}
+
+.middle-content .p-sentence {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 33px;
+    color: rgba(0, 0, 0, 0.69);
+}
+
+input {
+    width: 400px;
+    height: 32px;
+    padding: 10px;
+    background: rgba(188, 188, 188, 0.2);
+    border-radius: 5px;
+    border: none;
+    margin-top: 32px;
+    margin-bottom: 50px;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 33px;
+    color: #827B7B;
+}
+
+.menu-cat {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.view-all {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 33px;
+    text-decoration-line: underline;
+    color: #00302E;
+}
+
+.category-shadow {
+    width: 154px;
+    height: 180px;
+    filter: drop-shadow(0px 5px 10px rgba(0, 14, 48, 0.25));    
+}
+
+.category{
+    width: 130px;
+    height: 180px;
+    background: rgba(255, 255, 255, 0.83);
+    border: 0.3px solid rgba(0, 48, 46, 0.14);
+    border-radius: 20px;
+    position: relative;
+}
+
+.food-thanks {
+    position: absolute;
+    left: 15px;
+    top: 18px;
+}
+
+.category p {
+    position: absolute;
+    top: 80px;
+    left: 50px;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 33px;
+    text-align: center;
+    text-decoration-line: underline;
+    color: #00302E;
+}
+
+.vector {
+    position: absolute;
+    top: 145px;
+    left: 50px;
+}
+
+.main-category {
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+    margin-bottom: 49px;
+}
+
+.trending-h2 {
+    margin-bottom: 15px;
+}
+
+.meals{
+    width: 178.24px;
+    height: 228px;
+    filter: drop-shadow(0px 4px 10px #BCBCBC);
+    background: rgba(255, 255, 255, 0.83);
+    border: 0.3px solid rgba(0, 48, 46, 0.3);
+    border-radius: 20px;
+    position: relative;
+
+    transition: transform 0.8s ease-in-out, box-shadow 0.8s ease-in-out;
+}
+
+.meals:hover{
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+      /* Start and end with the original size */
+      transform: scale(1);
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+    }
+    50% {
+      /* Middle point of the animation, scale up and add a larger box shadow */
+      transform: scale(1.1);
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    }
+  }
+ 
+   
+
+.fire-icon {
+    position: absolute;
+    left: 130px;
+}
+
+.food-icon {
+    position: absolute;
+    left: 50px;
+    top: 20px;
+}
+
+.meals-available {
+    display: flex;
+    flex-direction: row;
+    gap: 60px;
+}
+
+.meals h4 {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 33px;
+    text-align: center;
+    color: #00302E;
+    position: relative;
+    left: 5px;
+    top: 80px;
+}
+
+.plantain {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.69);
+    position: absolute;
+    top: 120px;
+}
+
+.price {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 11px;
+    line-height: 33px;
+    color: #00302E;
+    position: absolute;
+    top: 190px;
+    left: 15px;
+}
+
+.add-icon {
+    position: absolute;
+    left: 120px;
+    top: 195px;
+    cursor: pointer;
+}
+
+/* The right sidebar */
+
+.right-container {
+    background: rgba(0, 48, 46, 0.15);
+    position: relative;
+    padding-left: 50px;
+
+    
+}
+
+.right-content {
+    padding-right: 20px;
+}
+
+.circle {
+    position: absolute;
+    left: 238px;
+    top: 20px;
+
+}
+
+.shop-cart {
+    position: absolute;
+    left: 250px;
+    top: 37px;
+    z-index: 10;
+    
+}
+
+.shop-cart:hover{
+    animation: bounce 0.5s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% {
+      /* Start and end position of the bounce effect */
+      transform: translateY(0);
+    }
+    50% {
+      /* Middle position of the bounce effect */
+      transform: translateY(-10px);
+    }
+  }
+
+.order-time {
+    width: 266px;
+    height: 137px;
+    background: linear-gradient(227.13deg, rgba(0, 48, 46, 0.83) 11.57%, rgba(5, 107, 103, 0.2822) 74.07%);
+    box-shadow: 0px 1px 10px rgba(0, 48, 46, 0.1);
+    border-radius: 20px;
+    position: absolute;
+    left: 20px;
+    top: 200px;
+}
+
+.food-design {
+    position: absolute;
+    left: 172px;
+    bottom: 105px;
+    transform: rotate(3.57deg);
+}
+
+.alert {
+    position: absolute;
+    left: 50px;
+    top: 15px;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 33px;
+    color: rgba(255, 255, 255, 0.83);
+}
+
+.time {
+    position: absolute;
+    left: 80px;
+    top: 50px;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 33px;
+    color: rgba(255, 255, 255, 0.83);
+}
+
+.vector-1 {
+    position: absolute;
+    left: 120px;
+    top: 100px;
+}
+
+.payment-history {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 20px;
+    position: relative;
+    top: 350px;
+}
+
+.payment h4 {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 33px;
+    color: #00302E;
+}
+
+.view-payments a {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 33px;
+    text-decoration-line: underline;
+    color: rgba(0, 48, 46, 0.7);
+}
+
+.payment-summary {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.recent-payments {
+    width: 266px;
+    height: 49.22px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    position: relative;
+    right: 27px;
+    top: 355px;
+}
+
+
+.list {
+    position: absolute;
+    left: 10px;
+    bottom: 5px;
+}
+
+.money {
+    position: absolute;
+    left: 40px;
+    bottom: 0.5px;
+}
+
+.cash {
+    position: absolute;
+    left: 190px;
+    bottom: 0.5px;
+}
+
+
+@media screen and (max-width: 768px) {
+    .main-container {
+      display: block;
+    }
+    .main-category {
+        display: block;
+    }
+    .meals-category {
+        display: block;
+    }
+    .right-container {
+        display: block;
+    }
+    .container-sidebar {
+      float: none;
+      width: 100%;
+    }
+  }
+  
+  /* Media query for smartphones and smaller screens */
+  @media screen and (max-width: 480px) {
+    .sidebar {
+      display: none; /* Hide the sidebar on smaller screens */
+    }
+    .main-container {
+        display: block;
+      }
+      .main-category {
+          display: block;
+      }
+      .meals-category {
+          display: block;
+      }
+      .right-container {
+          display: block;
+      }
+      .container-sidebar {
+        float: none;
+        width: 100%;
+      }
+  }
+  
+  
+  
+  
+  
+  
+  

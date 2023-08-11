@@ -1,0 +1,34 @@
+{% extends 'home/layout.html' %} 
+{% load static %}
+
+{% block title %} 
+    Login
+{% endblock title %} 
+
+{% block css %} 
+    <link rel="stylesheet" href="{% static 'home/login.css' %}">
+{% endblock css %} 
+
+{% block content %} 
+<div class="container">
+    <div class="left">
+      <img src="{% static 'images/login.png' %}" alt="background image" />
+    </div>
+
+    <div class="right">
+      <h3>Welcome !!</h3>
+      <div class="credential-warning">
+        {% if message %} 
+        <p> {{message}} </p>
+        {% endif %}
+      </div>
+      <form action="{% url 'login' %}" method="POST">
+        {% csrf_token %} 
+        <input type="text" name="username" placeholder="Enter ID" required />
+        <input type="password" name="password" placeholder="Your Password" required />
+        <button class="btn">LOGIN</button>
+        <p style="text-align: center; font-family: poppins;">Not yet a Member?<a href="{% url 'registering' %}"> Sign-Up</a></p>
+      </form>
+    </div>
+  </div>
+{% endblock content %} 

@@ -1,0 +1,105 @@
+{% extends 'dashboard/layout.html' %} 
+{% load static %} 
+
+{% block title %} 
+    Food Details 
+{% endblock %} 
+
+
+{% block css %} 
+<link rel="stylesheet" href="{% static 'dashboard/food-details.css' %}">
+
+
+
+{% endblock css %} 
+
+{% block content %} 
+<div class="selection-container">
+    <div class="food-selection">
+      <img class="food-select-img" src="{{food.food_image.url}}" alt="" />
+      <h2 class="foodname">{{food.name}}</h2>
+      <p class="food-details">
+        {{food.description}}
+      </p>
+    </div>
+    <div class="selection-table">
+      <table>
+        <thead>
+          <tr>
+            <th>Price</th>
+            <th>Preparation time</th>
+            <th>Quantity left</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Ghc {{food.Price}}</td>
+            <td>10-20 Mins</td>
+            <td>{{food.quantity}} servings Available</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="added-quantity">
+      {% csrf_token %}
+      <input type="hidden" value="{{food.id}}" class="food_id">
+      <div class="decrease-sign">
+        <h1 class="signs">-</h1>
+      </div>
+      <div class="number">
+        <h1 id="quantity" class="signs">1</h1>
+      </div>
+      <div class="increase-sign">
+        <h1 class="signs">+</h1>
+      </div>
+    </div>
+    <div class="add-to-cart">
+      <button class="cart-btn">Add to Cart</button>
+    </div>
+    <script src="{% static 'js/jquery-3.7.0.min.js' %}"></script>
+    <script src="{% static 'js/addToCart.js' %}"></script>
+
+
+</div>
+</div>
+</div>
+<div class="food-right-container"></div>
+
+{% endblock content %} 
+
+{% block script %} 
+<script>
+  $(document).ready(function () {
+    
+    $(document).on('click', '.cart-btn', function(e) {
+      e.preventDefault();
+
+      var food_id = $('.food_id').val();
+      var food_qty = $('#quantity').text();
+
+      console.log("quantity:", food_qty)
+      console.log("food_id:", food_id)
+
+      $.ajax({
+        type: "POST",
+        url: "{% url 'addtocart' %}",
+        data: {
+          'id': food_id,
+          'qty': food_qty,
+          'csrfmiddlewaretoken': '{{csrf_token}}',
+        },
+        dataType: "json",
+        success: function (response) {
+          alertify.success('Added to cart Successfully')
+          
+        },
+        error: function(xhr, textStatus, errorThrown){
+          console.log("Error:", textStatus, errorThrown);
+        }
+      });
+      
+    });
+  });
+</script>
+{% endblock script %} 
+

@@ -1,0 +1,31 @@
+{% extends 'home/layout.html' %} 
+{% load static %} 
+
+{% block title %} 
+    Register
+{% endblock title %} 
+
+{% block css %} 
+    <link rel="stylesheet" href="{% static 'home/register.css' %}">
+{% endblock css %} 
+
+{% block content %} 
+    <div class="register-container">
+        <h2 style="font-family: Poppins; color: #00302E;">Register</h2>
+        <div class="warning">
+            {% if message %}
+            <p>{{message}}</p>
+            {% endif %} 
+        </div>
+        <form action="" method="POST">
+            {% csrf_token %} 
+            <input type="text" placeholder="First Name" name="firstname" required>
+            <input type="text" placeholder="Last Name" name="lastname" required>
+            <input type="email" placeholder="E-mail" name="email" required>
+            <input type="text" placeholder="Enter ID" name="username" required>
+            <input type="password" placeholder="Enter Password" name="password1" required>
+            <input type="password" placeholder="Confirm Password" name="password2" required>
+            <button type="submit">Register</button>
+        </form>
+    </div>
+{% endblock content %} 

@@ -1,0 +1,69 @@
+{% extends 'dashboard/layout.html' %} 
+{% load static %} 
+
+{% block title %} 
+    Receipt details
+{% endblock title %} 
+
+{% block css %} 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Poppins:wght@400;500;600;700&family=Rubik:wght@500&display=swap"
+    rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{% static 'dashboard/receipt-info.css' %}">
+{% endblock css %} 
+
+{% block content %} 
+<div class="main-receipt">
+    <div class="receipt-content">
+      <!-- <div class="arrow">
+        <img src="/images/arow.svg" alt="" />
+      </div> -->
+      <div class="order-id">
+        <h3 class="order-number">Order ID: {{order.tracking_no}}</h3>
+        <p class="order-date">{{order.created_at}}</p>
+        <h1 class="receipt-ready">Your receipt is ready</h1>
+      </div>
+      <div class="receipt-details">
+        <h2 class="receipt-message">Here's your receipt</h2>
+        <p>{{request.user.first_name}}  {{request.user.last_name}}</p>
+        <hr />
+        {% for items in order_details %}
+        <div class="food-qtyprice">
+          <div class="food-type">
+            <p>{{items.food_item.name}}</p>
+          </div>
+          <div class="qty">
+            <p>qty: {{items.quantity}}</p>
+          </div>
+          <div>
+            <p style="font-weight: 600;">Gh.{{items.price|floatformat:"2"}}</p>
+          </div>
+          {% endfor %}
+          <!-- <div class="price">
+            <p class="tag"></p>
+          </div> -->
+        </div>
+        <hr />
+        <div>
+            <p>Additional information : {{ order.message }}</p>
+        </div>
+        <hr />
+        <div class="collection-details">
+          <div class="collection-time">
+            <p>Time for collection</p>
+          </div>
+          <div>
+            <p>{{ collection_time|time:"h:iA" }}</p>
+          </div>
+        </div>
+        <hr />
+        <div class="total-amount">
+          <h2>Total: Gh.{{order.total_price|floatformat:"2"}}</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock content %} 

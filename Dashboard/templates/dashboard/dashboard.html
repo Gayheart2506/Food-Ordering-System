@@ -1,0 +1,152 @@
+{% extends "dashboard/layout.html" %} 
+{% load static %}
+
+{% block title %}
+    Dashboard
+{% endblock title %}
+
+{% block css %} 
+  <link rel="stylesheet" href="{% static 'dashboard/dashboard.css' %}">
+  <link rel="stylesheet" href="{% static 'dashboard/details.css' %}">
+{% endblock css %}
+
+{% block content %}
+    <div class="menu-cat">
+    <div class="menu">
+      <h2>Menu Category</h2>
+    </div>
+    <div class="view-all">
+      <a href="{% url 'dailyfoods' %}">View all</a>
+    </div>
+  </div>
+  <div class="main-category">
+    <div class="category-shadow">
+      <div class="category">
+        <img
+          class="food-thanks"
+          src="{% static 'images/Food for thanksgiving.svg' %}"
+          alt=""
+        />
+        <p>All</p>
+        <img class="vector" src="{% static 'images/Vector.svg' %}" alt="" />
+      </div>
+    </div>
+    <div class="category-shadow">
+      <div class="category">
+        <img
+          class="food-thanks"
+          src="{% static 'images/Food for thanksgiving.svg' %}"
+          alt=""
+        />
+        <p>Breakfast</p>
+        <img class="vector" src="{% static 'images/Vector.svg' %}" alt="" />
+      </div>
+    </div>
+    <div class="category-shadow">
+      <div class="category">
+        <img
+          class="food-thanks"
+          src="{% static 'images/Food for thanksgiving.svg' %}"
+          alt=""
+        />
+        <p>Lunch</p>
+        <img class="vector" src="{% static 'images/Vector.svg' %}" alt="" />
+      </div>
+    </div>
+    <div class="category-shadow">
+      <div class="category">
+        <img
+          class="food-thanks"
+          src="{% static 'images/Food for thanksgiving.svg' %}"
+          alt=""
+        />
+        <p>Snacks</p>
+        <img class="vector" src="{% static 'images/Vector.svg' %}" alt="" />
+      </div>
+    </div>
+  </div>
+  <h2 class="trending-h2">Trending Meals</h2>
+            <div class="meals-category">
+              <div class="meals-available">
+                {% for lunch in lunchs %}
+                <div class="meals">
+                  <img
+                    class="fire-icon"
+                    src="{% static 'images/fluent-emoji-flat_fire.svg' %}"
+                    alt=""
+                  />
+                  <img
+                    class="food-icon"
+                    src="{{lunch.food_image.url}}"
+                    alt=""
+                  />
+                  <h4> {{lunch.name}} </h4>
+                  <p class="plantain"> {{lunch.small_description}} </p>
+                  <p class="price">Ghc {{lunch.Price}} </p>
+                  <a href="{% url 'food_details' lunch.id %}">
+                  <img
+                    class="add-icon"
+                    src="{% static 'images/carbon_add-filled.svg' %}"
+                    alt=""
+                  />
+                  </a>
+                </div>
+                  
+                {% endfor %}
+                
+                
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="right-container">
+          <div class="right-content">
+            <div class="shop">
+              <a href="{% url 'cart' %}">
+              <img
+                class="shop-cart"
+                src="{% static 'images/clarity_shopping-cart-outline-badged.svg' %}"
+                alt=""
+              />
+              </a>
+            </div>
+            <div class="main-circle">
+              <img class="circle" src="{% static 'images/Ellipse 3.svg' %}" alt="" />
+            </div>
+            <div class="order-time">
+              <img
+                class="food-design"
+                src="{% static 'images/Food for thanksgiving.svg' %}"
+                alt=""
+              />
+              <h4 class="alert">Hello, Welcome</h4>
+              <p class="time">{{ request.user.last_name }}</p>
+              <!-- <img class="vector-1" src="{% static 'images/Vector (1).svg' %}" alt="" /> -->
+            </div>
+            <div class="payment-history">
+              <div class="payment">
+                <h4>Payment History</h4>
+              </div>
+              <div class="view-payments">
+                <a href="{% url 'receipts' %}">View All</a>
+              </div>
+            </div>
+            <div class="payment-summary">
+              {% if order %} 
+              {% for things in order %} 
+              <div class="recent-payments">
+                <img class="list" src="{% static 'images/image 4.svg' %}" alt="" />
+                <p class="money">{{things.payment_mode}}</p>
+                <p class="cash">{{things.total_price|floatformat:"2"}}</p>
+              </div>
+              {% endfor %}
+              {% else %}
+              <div class="recent-payments">
+                <h4 style="text-align: center; margin-top: 10px;">No Payments Made</h4>
+              </div>
+              {% endif %} 
+            </div>
+          </div>
+        </div>
+        
+{% endblock content %}
